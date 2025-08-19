@@ -9,6 +9,11 @@
 
 let compteur = 0;
 const compteurEl = document.getElementById("compteur-el");
+const sauvegardeEl = document.getElementById("sauvegarde-el");
+const capturerBtn = document.getElementById("capturer-btn");
+const sauvegarderBtn = document.getElementById("sauvegarder-btn");
+capturerBtn.addEventListener("click", capturer);
+sauvegarderBtn.addEventListener("click", sauvegarder);
 
 function capturer() {
     compteur += 1; // Incrémenter le compteur de 1
@@ -22,3 +27,9 @@ function capturer() {
     }
 }
 
+function sauvegarder() {
+    let compteurStr = "<li>" + compteur + " Pokémons</li>";
+    sauvegardeEl.innerHTML += compteurStr; // Ajouter la valeur actuelle du compteur
+    compteur = 0;
+    compteurEl.textContent = compteur;
+}
