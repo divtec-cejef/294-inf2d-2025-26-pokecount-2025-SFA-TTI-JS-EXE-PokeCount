@@ -30,6 +30,8 @@ function sauvegarder() {
     localStorage.setItem("captures", sauvegardeEl.innerHTML); // Sauvegarder les captures dans le localStorage
     compteur = 0;
     compteurEl.textContent = compteur;
+
+    // Remet le zero en noir
     if (compteur === 0) {
         compteurEl.style.color = "black";
     }
@@ -42,9 +44,9 @@ window.addEventListener("load", () => { // Attendre que la page soit chargée po
 function reset () {
     compteur = 0;
     compteurEl.textContent = compteur;
+    sauvegardeEl.innerHTML = "";
 
-
-
+    // Remet le zero en noir
     if (compteur === 0) {
         compteurEl.style.color = "black";
     }
